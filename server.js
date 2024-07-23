@@ -28,12 +28,14 @@ import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import flash from 'express-flash';
 import session from 'cookie-session';
+import dotenv from 'dotenv';
+dotenv.config();
 import fs from 'fs';
 const db = getFirestore(app2);
 const upload = multer();
 //firebase reference: https://firebase.google.com/docs/database/admin/save-data
 
-const port = 3000;
+const port = process.env.PORT;
 const collection_name = 'tinyml-db';
 
 const app = express();
